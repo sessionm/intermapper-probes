@@ -12,7 +12,7 @@
      "version"        =     "1.0"
      "address_type"   =     "IP"
      "port_number"    =     "161"
-     "display_name"   =     "Fortinet BGP Trap"
+     "display_name"   =     "Network Devices/Fortinet/BGP Trap"
 </header>
 
 <description>
@@ -59,7 +59,7 @@ BGP Session Status is one of:
   bgpPeerRemoteAddr,    BGP4-MIB::bgpPeerRemoteAddr,  TRAPVARIABLE,  "BGP Peer IP Address"
   bgpPeerLastError,     BGP4-MIB::bgpPeerLastError,   TRAPVARIABLE,  "BGP Peer Last Error"
   bgpPeerState,         BGP4-MIB::bgpPeerState,       TRAPVARIABLE,  "BGP Peer State"
-  bgpPeerStateParsed,   BGP4-MIB::bgpPeerState,       TRAPVARIABLE-STRING { idle(1), connect(2), active(3), opensent(4), openconfirm(5), established(6) }
+  peerStateString, ($bgpPeerState==1 ? "idle" : $bgpPeerState==2 ? "connect" : $bgpPeerState==3 ? "active" : $bgpPeerState==4 ? "opensent" : $bgpPeerState==5 ? "openconfirm" : $bgpPeerState==6 ? "established" : "Unknown state"), CALCULATION, "replacement string for bgp peer state" 
 </snmp-device-variables>
 
 
@@ -82,6 +82,6 @@ BGP Session Status is one of:
   \4\       Reporting Device:\0\  $sysName \3IG\ \P0M\
   \4\            BGP Peer IP:\0\  $bgpPeerRemoteAddr \3IG\  \P0M\
   \4\         BGP Peer State:\0\  $bgpPeerState \3IG\  \P0M\
-  \4\ BGP Peer State Meaning:\0\  $bgpPeerStateParsed \3IG\  \P0M\
+  \4\ BGP Peer State Meaning:\0\  $peerStateString \3IG\  \P0M\
   \4\  BGP Peer's Last Error:\0\  $bgpPeerLastError \3IG\  \P0M\
 </snmp-device-display>
