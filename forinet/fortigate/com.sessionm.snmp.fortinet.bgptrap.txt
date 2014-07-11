@@ -1,5 +1,5 @@
  <!--
-     SNMP BGP Trap probe for Fortinet Firewalls (com.sessionm.snmp.fortinet.bgp.trap)
+     SNMP BGP Trap probe for Fortinet Firewalls (com.sessionm.snmp.fortinet.bgptrap)
 
      09 Jul 2014 Original version - vachon
 -->
@@ -71,7 +71,7 @@ BGP Session Status is one of:
 
 <snmp-device-display>
 
-\B5\BGP Peering Status for BGP Neighbor $BGPPeerIP\0P\ 
+\B5\BGP Peering Status for BGP Neighbor $BGPPeerRemoteAddr\0P\ 
   \4\      TimeStamp:\0\  $timeStampVar \3IG\(sysuptime) \P0M\
   \4\   AgentAddress:\0\  $agentAdrsVar
   \4\  SenderAddress:\0\  $senderAdrsVar
