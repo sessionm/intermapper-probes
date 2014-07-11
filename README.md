@@ -1,1 +1,1 @@
-Repo of our custom probes
+intermapper-probes
