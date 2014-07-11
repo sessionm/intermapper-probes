@@ -57,7 +57,6 @@ BGP Session Status is one of:
   senderAdrsVar,        $SenderAddress,               TRAPVARIABLE,  "Sender Address"
   sysName,              SNMPv2-MIB::sysName.0,        TRAPVARIABLE,  "Reporting Device"
   bgpPeerRemoteAddr,    BGP4-MIB::bgpPeerRemoteAddr,  TRAPVARIABLE,  "BGP Peer IP Address"
-  bgpPeerLastError,     BGP4-MIB::bgpPeerLastError,   TRAPVARIABLE,  "BGP Peer Last Error"
   bgpPeerState,         BGP4-MIB::bgpPeerState,       TRAPVARIABLE,  "BGP Peer State"
   peerStateString, ($bgpPeerState==1 ? "idle" : $bgpPeerState==2 ? "connect" : $bgpPeerState==3 ? "active" : $bgpPeerState==4 ? "opensent" : $bgpPeerState==5 ? "openconfirm" : $bgpPeerState==6 ? "established" : "Unknown state"), CALCULATION, "replacement string for bgp peer state" 
 </snmp-device-variables>
@@ -83,5 +82,4 @@ BGP Session Status is one of:
   \4\            BGP Peer IP:\0\  $bgpPeerRemoteAddr \3IG\  \P0M\
   \4\         BGP Peer State:\0\  $bgpPeerState \3IG\  \P0M\
   \4\ BGP Peer State Meaning:\0\  $peerStateString \3IG\  \P0M\
-  \4\  BGP Peer's Last Error:\0\  $bgpPeerLastError \3IG\  \P0M\
 </snmp-device-display>
