@@ -13,6 +13,7 @@
      "address_type"   =     "IP"
      "port_number"    =     "161"
      "display_name"   =     "Network Devices/Fortinet/BGP Trap"
+     "flags"          =     "MINIMAL"
 </header>
 
 <description>
