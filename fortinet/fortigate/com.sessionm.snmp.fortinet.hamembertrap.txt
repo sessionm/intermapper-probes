@@ -13,6 +13,7 @@
      "address_type"   =     "IP"
      "port_number"    =     "161"
      "display_name"   =     "Network Devices/Fortinet/HA Member Trap"
+     "flags"          =     "MINIMAL"
 </header>
 
 <description>
@@ -50,7 +51,7 @@ to check if it matches the HA member status change OID.
   fgHaTrapMemberSerial, FORTINET-FORTIGATE-MIB::fgHaTrapMemberSerial.0,     TRAPVARIABLE,   "Reporting Device"
   fgTrapHaMemberDown,   FORTINET-FORTIGATE-MIB::fgTrapHaMemberDown,         TRAPVARIABLE,   "Fortinet HA Member Down"
   fgTrapHaMemberUp,     FORTINET-FORTIGATE-MIB::fgTrapHaMemberUp,           TRAPVARIABLE,   "Foritnet HA Member Up"
-  fgStatusChange,       ($trapOIDVar =~ "fgTrapHaMemberDown" ? "HA Member Down" : $trapOIDVar =~ "fgTrapHaMemberUp" ? "HA Member Up" : "Unknown State"),  CALCULATION, "replacement string for ha member state change"
+  fgStatusChange,       ($trapOIDVar =~ "fgTrapHaMemberDown" ? "HA Member Down" : $trapOIDVar =~ "fgTrapHaMemberUp" ? "HA Member Up" : "" ),  CALCULATION, "replacement string for ha member state change"
 </snmp-device-variables>
 
 
